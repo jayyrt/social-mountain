@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import './App.css';
 
 import Header from './Header/Header';
@@ -18,8 +18,34 @@ class App extends Component {
     this.createPost = this.createPost.bind( this );
   }
   
-  componentDidMount() {
+  render() {
+    const { posts } = this.state;
 
+    return (
+      <div className="App_parent">
+        <Header />
+
+        <section className="App_content">
+          <Compose />
+
+          {
+            posts.map( post => (
+              <Post key={ post.id }
+                    text={ post.text }
+                    date={ post.date } />
+            ))
+          }
+
+        </section>
+      </div>
+    );
+  }
+  
+  componentDidMount() {
+    axios.get('https://practiceapi.devmountain.com/api/posts')
+    .then( results => {
+      this.setState({ posts: results.data });
+    });
   }
 
   updatePost() {
