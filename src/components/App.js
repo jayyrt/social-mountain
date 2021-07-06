@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-
+import Post from './Post/Post'
 import Header from './Header/Header';
 import Compose from './Compose/Compose';
 
@@ -71,6 +71,15 @@ class App extends Component {
 
           <Compose />
           
+          {
+          posts.map( post => (
+            <Post key={ post.id }
+                  text={ post.text }
+                  date={ post.date }
+                  id={ post.id }
+                  updatePostFn={ this.updatePost } />
+          ))
+          }
         </section>
       </div>
     );
