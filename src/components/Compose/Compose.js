@@ -16,7 +16,7 @@ export default class Compose extends Component {
     this.createPost = this.createPost.bind( this );
   }
 
-  updateText( text ) {
+  updateText( id, text ) {
     this.setState({ text });
   }
 

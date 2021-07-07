@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './Edit.css';
 import './App.js';
-
 //////////////////////////////////////////////////////// THIS COMPONENT IS BEING RENDERED IN THE *POST* COMPONENT
 
 export default class Edit extends Component {
