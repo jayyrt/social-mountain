@@ -6,10 +6,9 @@ import MessageIcon from 'react-icons/lib/md/mail-outline';
 import MasterControlIcon from 'react-icons/lib/md/more-vert';
 
 import './Post.css';
-
 import Edit from './Edit/Edit';
-
 //////////////////////////////////////////////////////// THIS COMPONENT IS BEING RENDERED IN THE *APP* COMPONENT
+
 
 export default class Post extends Component {
   constructor() {
@@ -67,7 +66,7 @@ export default class Post extends Component {
           {/* Drop-down menu. Remember that the "showMasterMenu" variable has been destructured off of this.state */}
           <div className="Post__master-menu" style={ { display: showMasterMenu ? 'flex' : 'none' } }>
             <span onClick={ this.showEdit }>Edit</span>
-            <span>Delete</span>
+            <span onClick={ () => deletePostFn( id ) }>Delete</span>
           </div>
         </div>
 
