@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import './Edit.css';
-import './App.js';
 //////////////////////////////////////////////////////// THIS COMPONENT IS BEING RENDERED IN THE *POST* COMPONENT
 
 export default class Edit extends Component {
@@ -17,14 +16,6 @@ export default class Edit extends Component {
 
   updateText( value ) {
     this.setState({ text: value });
-  }
-
-  updatePost( id, text ) {
-    const { text } = this.state;
-    const { id, updatePostFn, hideEdit } = this.props;
-
-    updatePostFn( id, text );
-    hideEdit();
   }
 
   render() {
